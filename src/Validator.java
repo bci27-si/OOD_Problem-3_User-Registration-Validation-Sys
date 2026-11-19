@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
-
 public interface Validator {
+
+    public void setNextvalidator();
+
+    public void validate();
+
 }
