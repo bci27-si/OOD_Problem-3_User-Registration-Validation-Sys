@@ -9,7 +9,7 @@ public class UserRegisterAPP {
     }
 
 
-    // create the swing ui in main for now i think.
+    // create the swing ui IN A SEPERATE CLASS
     /*
     Set Up the Java Swing UI:
 Create a Java Swing form (JFrame) with fields for Username, Password, Email, and an optional Phone Number.
