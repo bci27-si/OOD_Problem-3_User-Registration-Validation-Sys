@@ -1,17 +1,23 @@
-public class PhoneNumberValidator {
+public class PhoneNumberValidator implements Validator {
 
     // htis is OPTIONAL ACCORDING TO THE DOC
+    private Validator nextValidator;
 
 //Phone Number Validation:  validation to ensure the phone number:
 //Has exactly 10 digits.
 //Contains only numbers.
 
-    public boolean validatePhoneNumber(String phoneNumber) {
+    @Override
+    public void setNextValidator(Validator nextValidator) {
+        this.nextValidator = nextValidator;
+    }
 
-        if (phoneNumber.length() != 10) {
-            return false;
+    @Override
+    public void validate(UserRegistration test) {
+        if (test.getPhone().length() != 10) {
+            System.out.println("Invalid phone number");
         }
-        return true;
+
     }
 }
 /*
