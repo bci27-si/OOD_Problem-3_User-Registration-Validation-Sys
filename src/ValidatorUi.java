@@ -10,6 +10,8 @@ Create a Java Swing form (JFrame) with fields for Username, Password, Email, and
 Add a Register button to submit the form.
 Display validation error messages near each input field if validation fails.
 */
+    // created the window here
+
     JFrame frame = new JFrame();
 
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,34 +33,32 @@ Display validation error messages near each input field if validation fails.
 
     //field for UserName
     JTextField user = new JTextField(50);
-    frame.add(field);
+    frame.add(user);
 
     String userText = user.getText();
     user.setText("Username goes here");
 
     //field FOr password
-    JTextField user = new JTextField(50);
+    JTextField pass = new JTextField(50);
     frame.add(field);
 
-    String userText = user.getText();
-    user.setText("Username goes here");
+    String passText = user.getText();
+    user.setText("Password goes here");
 
     //field for Email
-    JTextField user = new JTextField(50);
+    JTextField email = new JTextField(50);
     frame.add(field);
 
-    String userText = user.getText();
-    user.setText("Username goes here");
+    String emailText = user.getText();
+    user.setText("Email goes here");
 
     //field for phone
 
-    JTextField user = new JTextField(50);
+    JTextField phone = new JTextField(50);
     frame.add(field);
 
-    String userText = user.getText();
-    user.setText("Username goes here");
-
-
-
+    String phoneNumbers = user.getText();
+    user.setText("Phone goes here");
 
 }
+
