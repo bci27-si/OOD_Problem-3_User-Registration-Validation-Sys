@@ -38,11 +38,17 @@ Display validation error messages near each input field if validation fails.
             }
         });
 
+        JLabel l =new JLabel("Username");
+        JLabel l2 =new JLabel("Password");
+        JLabel l3 =new JLabel("Email");
+        JLabel l4 =new JLabel("Phone Number");
+
         panel.add(b);
 
         //field for UserName
         JTextField user = new JTextField(50);
         panel.add(user);
+        panel.add(l);
 
         String userText = user.getText();
         user.setText("Username goes here");
@@ -50,6 +56,7 @@ Display validation error messages near each input field if validation fails.
         //field FOr password
         JTextField pass = new JTextField(50);
         panel.add(pass);
+        panel.add(l2);
 
         String passText = pass.getText();
         pass.setText("Password goes here");
@@ -57,6 +64,7 @@ Display validation error messages near each input field if validation fails.
         //field for Email
         JTextField email = new JTextField(50);
         panel.add(email);
+        panel.add(l3);
 
         String emailText = email.getText();
         email.setText("Email goes here");
@@ -65,6 +73,7 @@ Display validation error messages near each input field if validation fails.
 
         JTextField phone = new JTextField(50);
         panel.add(phone);
+        panel.add(l4);
 
         String phoneNumbers = phone.getText();
         phone.setText("Phone goes here");
