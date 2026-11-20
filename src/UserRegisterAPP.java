@@ -11,6 +11,12 @@ public class UserRegisterAPP {
 
     // create the swing ui IN A SEPERATE CLASS
     /*
+
+       Set Up and Test the Validation Chain:
+In your main class, set up the validators in sequence and link them using the CoR pattern.
+When the Register button is clicked, initiate validation, and display a success message if all fields are valid.
+
+
     Set Up the Java Swing UI:
 Create a Java Swing form (JFrame) with fields for Username, Password, Email, and an optional Phone Number.
 Add a Register button to submit the form.
