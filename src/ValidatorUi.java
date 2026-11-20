@@ -45,13 +45,18 @@ Display validation error messages near each input field if validation fails.
 
         panel.add(b);
 
+
         //field for UserName
         JTextField user = new JTextField(50);
         panel.add(user);
         panel.add(l);
 
+        // take user input after button is pressed and run through COR validators
+        //user.
+
         String userText = user.getText();
         user.setText("Username goes here");
+
 
         //field FOr password
         JTextField pass = new JTextField(50);
@@ -61,17 +66,23 @@ Display validation error messages near each input field if validation fails.
         String passText = pass.getText();
         pass.setText("Password goes here");
 
+
         //field for Email
         JTextField email = new JTextField(50);
         panel.add(email);
         panel.add(l3);
+        //email.
 
         String emailText = email.getText();
         email.setText("Email goes here");
 
+
+
+
         //field for phone
 
         JTextField phone = new JTextField(50);
+
         panel.add(phone);
         panel.add(l4);
 
