@@ -26,7 +26,7 @@ Display validation error messages near each input field if validation fails.
         JPanel panel = new JPanel(new GridLayout());
         frame.add(panel);
 
-        panel.setVisible(true);
+        //panel.setVisible(true);
 
 //  register button
         JButton b =new JButton("Register");
@@ -49,14 +49,14 @@ Display validation error messages near each input field if validation fails.
 
         //field FOr password
         JTextField pass = new JTextField(50);
-        frame.add(pass);
+        panel.add(pass);
 
         String passText = pass.getText();
         pass.setText("Password goes here");
 
         //field for Email
         JTextField email = new JTextField(50);
-        frame.add(email);
+        panel.add(email);
 
         String emailText = email.getText();
         email.setText("Email goes here");
@@ -64,13 +64,28 @@ Display validation error messages near each input field if validation fails.
         //field for phone
 
         JTextField phone = new JTextField(50);
-        frame.add(phone);
+        panel.add(phone);
 
         String phoneNumbers = phone.getText();
         phone.setText("Phone goes here");
 
 
     }
+/*
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(ValidatorUi::new);
+    }
+*/
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                new ValidatorUi().setVisible(true);
+
+            }
+        });
+    }
+
 
 
 }

@@ -3,9 +3,6 @@ public class UserRegisterAPP {
 
     public static void main(String[] args) {
 
-        ValidatorUi ui = new ValidatorUi();
-
-        ui.setVisible(true);
 
 
         // set up everything here
