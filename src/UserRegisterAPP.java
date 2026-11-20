@@ -3,6 +3,16 @@ public class UserRegisterAPP {
 
     public static void main(String[] args) {
         // set up everything here
+/*
+        username;
+        password;
+        email;
+        phone;
+        */
+        //start the ui here get data from the fields, then
+
+        //UserRegistration u = new UserRegistration();
+
 
 
 

@@ -1,7 +1,8 @@
 public class UserRegistration {
-    // holde the user inputs username, password, email, phonenumber
+    // hold the user inputs username, password, email, phonenumber
 
 /*
+
 Define UserRegistration Class:
 Create a class UserRegistration to hold the user’s inputs
 (username,
@@ -18,15 +19,13 @@ phoneNumber).
 
     // put into constructor
 
-public UserRegistration(String username, String password, String email, String phone) {
+    public UserRegistration(String username, String password, String email, String phone) {
 
-    this.username = username;
-    this.password = password;
-    this.email = email;
-    this.phone = phone;
-}
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+    }
 // create the classes one by one
-
-
 
 }
