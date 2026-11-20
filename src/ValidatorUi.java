@@ -1,8 +1,6 @@
-package UserRegisterAPP;
-
 import javax.swing.*;
 
-import java.awt.Frame;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +22,11 @@ Display validation error messages near each input field if validation fails.
         frame.setSize(500,450);
         frame.setVisible(true);
 
+        // new grid layout for more exact layout
+        JPanel panel = new JPanel(new GridLayout());
+        frame.add(panel);
+
+        panel.setVisible(true);
 
 //  register button
         JButton b =new JButton("Register");
@@ -35,11 +38,11 @@ Display validation error messages near each input field if validation fails.
             }
         });
 
-        frame.add(b);
+        panel.add(b);
 
         //field for UserName
         JTextField user = new JTextField(50);
-        frame.add(user);
+        panel.add(user);
 
         String userText = user.getText();
         user.setText("Username goes here");
