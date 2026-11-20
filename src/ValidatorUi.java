@@ -76,6 +76,7 @@ Display validation error messages near each input field if validation fails.
         SwingUtilities.invokeLater(ValidatorUi::new);
     }
 */
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable(){
             @Override
