@@ -1,10 +1,12 @@
-public class PasswordValidator {
+public class PasswordValidator implements Validator {
 
     //Password Validation: The password must:
     //Be at least 8 characters long.
     //Contain at least one uppercase letter.
     //Contain at least one lowercase letter.
     //Contain at least one digit.
+
+    private Validator nextValidator;
 
     boolean hasLength = true; // might break, but should wok fine w current logic
     boolean hasLower = false;
@@ -43,4 +45,13 @@ public class PasswordValidator {
     }
 
 
+    @Override
+    public void setNextValidator(Validator nextValidator) {
+        this.nextValidator = nextValidator;
+    }
+
+    @Override
+    public void validate(UserRegistration test) {
+
+    }
 }

@@ -1,6 +1,6 @@
 public interface Validator {
 
-    public void setNextvalidator(Validator nextvalidator);
+    public void setNextValidator(Validator nextValidator);
 
     public void validate(UserRegistration test);
 

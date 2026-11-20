@@ -1,28 +1,21 @@
 public class UsernameValidator implements Validator {
     //Username Validation: The username must be non-empty and at least 5 characters long.
 
-    private Validator nextValidatoralidator;
-
-    public boolean ValidateUsername(String username) {
-
-
-    }
-
+    private Validator nextValidator;
 
     @Override
-    public void setNextvalidator(Validator nextvalidator) {
-        this.nextvalidator = nextvalidator;
-
+    public void setNextValidator(Validator nextValidator) {
+        this.nextValidator = nextValidator;
     }
 
     @Override
     public void validate(UserRegistration test) {
-        if (test.isEmpty()) {
+        if (test.getUsername() == null || test.getUsername().equals("")) {
             System.out.println("Username is empty");
 
         }
 
-        if (test.length() < 5) {
+        if (test.getUsername().length() < 5) {
             System.out.println("Username too short");
 
         }
