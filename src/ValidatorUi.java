@@ -1,15 +1,21 @@
+package UserRegisterAPP;
+
 import javax.swing.*;
 import javax.swing.JFrame;
+
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ValidatorUi extends JFrame {
 
-    /*Set Up the Java Swing UI:
+    /*
+    Set Up the Java Swing UI:
 Create a Java Swing form (JFrame) with fields for Username, Password, Email, and an optional Phone Number.
 Add a Register button to submit the form.
 Display validation error messages near each input field if validation fails.
 */
+
     // created the window here
 
     JFrame frame = new JFrame();
@@ -42,23 +48,23 @@ Display validation error messages near each input field if validation fails.
     JTextField pass = new JTextField(50);
     frame.add(field);
 
-    String passText = user.getText();
-    user.setText("Password goes here");
+    String passText = pass.getText();
+    pass.setText("Password goes here");
 
     //field for Email
     JTextField email = new JTextField(50);
     frame.add(field);
 
-    String emailText = user.getText();
-    user.setText("Email goes here");
+    String emailText = email.getText();
+    email.setText("Email goes here");
 
     //field for phone
 
     JTextField phone = new JTextField(50);
     frame.add(field);
 
-    String phoneNumbers = user.getText();
-    user.setText("Phone goes here");
+    String phoneNumbers = phone.getText();
+    phone.setText("Phone goes here");
 
 }
 

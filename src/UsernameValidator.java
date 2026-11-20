@@ -1,7 +1,7 @@
 public class UsernameValidator {
     //Username Validation: The username must be non-empty and at least 5 characters long.
 
-    public boolean VerifyUsername(String username) {
+    public boolean ValidateUsername(String username) {
 
         if (username.isEmpty()) {
             System.out.println("Username is empty");

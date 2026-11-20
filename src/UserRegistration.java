@@ -18,7 +18,14 @@ phoneNumber).
 
     // put into constructor
 
+public UserRegistration(String username, String password, String email, String phone) {
 
+    this.username = username;
+    this.password = password;
+    this.email = email;
+    this.phone = phone;
+}
+// create the classes one by one
 
 
 
