@@ -3,9 +3,22 @@ public class UserRegisterAPP {
 
     public static void main(String[] args) {
 
+        // create the validator objects
+        Validator UsernameValidator = new UsernameValidator();
+        Validator PasswordValidator = new PasswordValidator();
+        Validator EmailValidator = new EmailValidator();
+        Validator phoneNumberValidator = new PhoneNumberValidator();
+
+        // validators connected properly for user > pass > email > phone
+        UsernameValidator.setNextValidator(PasswordValidator);
+        PasswordValidator.setNextValidator(EmailValidator);
+        EmailValidator.setNextValidator(phoneNumberValidator);
 
 
         // set up everything here
+        // for connetiong the ui to validators
+
+
 /*
         username;
         password;
@@ -13,12 +26,6 @@ public class UserRegisterAPP {
         phone;
         */
         //start the ui here get data from the fields, then
-
-        //UserRegistration u = new UserRegistration();
-
-
-
-
     }
 
 

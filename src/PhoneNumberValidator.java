@@ -13,10 +13,14 @@ public class PhoneNumberValidator implements Validator {
     }
 
     @Override
-    public void validate(UserRegistration test) {
-        if (test.getPhone().length() != 10) {
+    public void validate(UserRegistration data) {
+        if (data.getPhone().length() != 10) {
             System.out.println("Invalid phone number");
         }
+
+        // add a check that tries to add 1 to a digit
+        // and detects whether it is or isnt a number
+
 
     }
 }
@@ -26,6 +30,5 @@ public class PhoneNumberValidator implements Validator {
     }
 
     return true;
-
 }
 */

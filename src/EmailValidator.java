@@ -12,17 +12,19 @@ public class EmailValidator implements Validator {
     @Override
     public void setNextValidator(Validator nextValidator) {
         this.nextValidator = nextValidator;
-
     }
 
     @Override
-    public void validate(UserRegistration test) {
+    public void validate(UserRegistration data) {
 
-        if (test.getEmail().contains("@")) {
-            if (!test.getEmail().contains(".")) {
-
+        if (data.getEmail().contains("@")) {
+            if (!data.getEmail().contains(".")) {
+                // exception probably
             }
+        }
 
+        else{
+            // throw an exception ? to avoid this being improperly validated ?
         }
 
     }

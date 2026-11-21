@@ -9,17 +9,17 @@ public class UsernameValidator implements Validator {
     }
 
     @Override
-    public void validate(UserRegistration test) {
-        if (test.getUsername() == null || test.getUsername().equals("")) {
+    public void validate(UserRegistration data) {
+        if (data.getUsername() == null || data.getUsername().equals("")) {
             System.out.println("Username is empty");
 
         }
 
-        if (test.getUsername().length() < 5) {
+        if (data.getUsername().length() < 5) {
             System.out.println("Username too short");
 
         }
-        System.out.println("Username: " + test.getUsername()+ " is valid");
+        System.out.println("Username: " + data.getUsername()+ " is valid");
 
     }
 }

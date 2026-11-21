@@ -19,11 +19,13 @@ Display validation error messages near each input field if validation fails.
         JFrame frame = new JFrame();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,450);
+        frame.setSize(600,550);
         frame.setVisible(true);
 
-        // new grid layout for more exact layout
-        JPanel panel = new JPanel(new GridLayout());
+        // new grid layout for more exact layout; 5 rows, 1 column
+
+        //***** not sure why, but everything except button location works when \/ is 0,1
+        JPanel panel = new JPanel(new GridLayout(0,1));
         frame.add(panel);
 
         //panel.setVisible(true);
@@ -34,7 +36,9 @@ Display validation error messages near each input field if validation fails.
         b.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 // ADD WHAT THE BUTTON ACTUALLY DOES HERE
-                System.out.println("button acton");
+                System.out.println("button pressed");
+
+
             }
         });
 
@@ -43,11 +47,11 @@ Display validation error messages near each input field if validation fails.
         JLabel l3 =new JLabel("Email");
         JLabel l4 =new JLabel("Phone Number");
 
-        panel.add(b);
+        panel.add(b,BorderLayout.SOUTH);// make sure my button is at the bottom so it doesn't mess u he fields
 
 
         //field for UserName
-        JTextField user = new JTextField(50);
+        JTextField user = new JTextField();
         panel.add(user);
         panel.add(l);
 
@@ -59,16 +63,17 @@ Display validation error messages near each input field if validation fails.
 
 
         //field FOr password
-        JTextField pass = new JTextField(50);
+        JTextField pass = new JTextField();
         panel.add(pass);
         panel.add(l2);
 
+        //FIXME how do i set this so it dissapears when the user selects the field?
         String passText = pass.getText();
         pass.setText("Password goes here");
 
 
         //field for Email
-        JTextField email = new JTextField(50);
+        JTextField email = new JTextField();
         panel.add(email);
         panel.add(l3);
         //email.
@@ -77,20 +82,17 @@ Display validation error messages near each input field if validation fails.
         email.setText("Email goes here");
 
 
-
-
         //field for phone
 
-        JTextField phone = new JTextField(50);
+        JTextField phone = new JTextField();
 
         panel.add(phone);
         panel.add(l4);
 
         String phoneNumbers = phone.getText();
         phone.setText("Phone goes here");
-
-
     }
+
 /*
     public static void main(String[] args) {
         SwingUtilities.invokeLater(ValidatorUi::new);
@@ -104,10 +106,9 @@ Display validation error messages near each input field if validation fails.
                 new ValidatorUi().setVisible(true);
 
             }
+
         });
+
     }
 
-
-
 }
-

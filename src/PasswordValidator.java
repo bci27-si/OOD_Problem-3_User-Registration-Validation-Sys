@@ -12,7 +12,6 @@ public class PasswordValidator implements Validator {
     boolean hasUppercase = false;
     boolean hasDigit = false;
 
-
     @Override
     public void setNextValidator(Validator nextValidator) {
         this.nextValidator = nextValidator;
@@ -72,5 +71,3 @@ public class PasswordValidator implements Validator {
 
     }
 }
-
-
