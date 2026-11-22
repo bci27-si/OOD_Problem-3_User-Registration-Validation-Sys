@@ -30,7 +30,7 @@ Display validation error messages near each input field if validation fails.
 
         //panel.setVisible(true);
 
-//  register button
+        //  register button
         JButton b =new JButton("Register");
 
         b.addActionListener(new ActionListener(){
