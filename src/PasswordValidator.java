@@ -64,6 +64,9 @@ public class PasswordValidator implements Validator {
                 break;
 
             }
+            else{
+                nextValidator = null;
+            }
         }
 
         if (nextValidator != null) {

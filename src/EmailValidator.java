@@ -18,6 +18,7 @@ public class EmailValidator implements Validator {
     public void validate(UserRegistration data) {
 
         if (!data.getEmail().contains("@")) {
+            //probably should add logic for a minimum 1 letter  between @ and . before and after as well.
             if (!data.getEmail().contains(".")) {
                 // exception probably
             }
@@ -25,6 +26,7 @@ public class EmailValidator implements Validator {
 
         else{
             // throw an exception ? to avoid this being improperly validated ?
+            nextValidator = null;
         }
 
         if (nextValidator != null){

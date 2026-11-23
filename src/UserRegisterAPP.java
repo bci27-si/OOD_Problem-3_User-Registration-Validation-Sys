@@ -2,6 +2,10 @@ import javax.swing.SwingUtilities;
 
 public class UserRegisterAPP {
 
+    /**
+     * Fixed ui problem by goint to JDK Default instaed of letting it stay set to 26...
+     * @param args
+     */
 
     public static void main(String[] args) {
 
@@ -17,14 +21,8 @@ public class UserRegisterAPP {
         EmailValidator.setNextValidator(phoneNumberValidator);
 
         // start swing
-        SwingUtilities.invokeLater(new Runnable(){
-            @Override
-            public void run(){
-                new ValidatorUi().setVisible(true);
+        SwingUtilities.invokeLater(()-> new ValidatorUi(UsernameValidator));
 
-            }
-
-        });
 
 
         /*
