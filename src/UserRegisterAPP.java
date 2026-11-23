@@ -1,3 +1,5 @@
+import javax.swing.SwingUtilities;
+
 public class UserRegisterAPP {
 
 
@@ -14,6 +16,23 @@ public class UserRegisterAPP {
         PasswordValidator.setNextValidator(EmailValidator);
         EmailValidator.setNextValidator(phoneNumberValidator);
 
+        // start swing
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                new ValidatorUi().setVisible(true);
+
+            }
+
+        });
+
+
+        /*
+
+                java: invalid source release 26 with --enable-preview
+            (preview language features are only supported for release 27)
+
+         */
 
         // set up everything here
         // for connetiong the ui to validators

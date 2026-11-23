@@ -17,7 +17,7 @@ public class EmailValidator implements Validator {
     @Override
     public void validate(UserRegistration data) {
 
-        if (data.getEmail().contains("@")) {
+        if (!data.getEmail().contains("@")) {
             if (!data.getEmail().contains(".")) {
                 // exception probably
             }
@@ -25,6 +25,10 @@ public class EmailValidator implements Validator {
 
         else{
             // throw an exception ? to avoid this being improperly validated ?
+        }
+
+        if (nextValidator != null){
+            nextValidator.validate(data);
         }
 
     }

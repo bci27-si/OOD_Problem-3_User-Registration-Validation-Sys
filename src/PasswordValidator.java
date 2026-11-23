@@ -8,9 +8,10 @@ public class PasswordValidator implements Validator {
     private Validator nextValidator;
 
     //boolean hasLength = true; // might break, but should work fine w current logic
-    boolean hasLower = false;
-    boolean hasUppercase = false;
-    boolean hasDigit = false;
+    private boolean hasLower = false;
+    private boolean hasUppercase = false;
+    private boolean hasDigit = false;
+    // only accessible by code in this class. Obv otherwise through a getter or setter
 
     @Override
     public void setNextValidator(Validator nextValidator) {
@@ -42,23 +43,23 @@ public class PasswordValidator implements Validator {
 
             //check for Uppercase
             // check only if the condition has not already been met
-            if (hasUppercase && Character.isUpperCase(character)) {
+            if (Character.isUpperCase(character)) {
                 hasUppercase = true;
             }
 
             // check for loweCase
-            if (hasLower && Character.isLowerCase(character)) {
+            if (Character.isLowerCase(character)) {
                 hasLower = true;
             }
 
             // is digit and has digit don't work...
-            if (hasDigit && Character.isDigit(character)) {
+            if (Character.isDigit(character)) {
                 //hasDigit = true;
                 hasDigit = true;
 
             }
-
-            if (hasUppercase && hasDigit && hasLower) {
+// (hasUppercase && hasDigit && hasLower) = true simplified to \/
+            if ((hasUppercase && hasDigit && hasLower)) {
                 System.out.println("Password looks good1");
                 break;
 

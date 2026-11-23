@@ -21,5 +21,9 @@ public class UsernameValidator implements Validator {
         }
         System.out.println("Username: " + data.getUsername()+ " is valid");
 
+        if (nextValidator != null) {
+            nextValidator.validate(data);
+        }
+
     }
 }

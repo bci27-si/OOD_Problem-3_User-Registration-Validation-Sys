@@ -4,7 +4,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ValidatorUi extends JFrame {
+// don't need to extend JFrame because two windows open... wonder how that works. anyway...
+public class ValidatorUi {
 
     /*
     Set Up the Java Swing UI:
@@ -37,6 +38,8 @@ Display validation error messages near each input field if validation fails.
             public void actionPerformed(ActionEvent e){
                 // ADD WHAT THE BUTTON ACTUALLY DOES HERE
                 System.out.println("button pressed");
+
+                //call and run the validators through / in the main
 
 
             }
@@ -100,14 +103,7 @@ Display validation error messages near each input field if validation fails.
 */
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable(){
-            @Override
-            public void run(){
-                new ValidatorUi().setVisible(true);
 
-            }
-
-        });
 
     }
 
