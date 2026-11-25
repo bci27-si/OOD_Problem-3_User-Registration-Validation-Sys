@@ -19,6 +19,14 @@ public class PhoneNumberValidator implements Validator {
             if (data.getPhone().length() != 10) {
                 throw new Exception("Invalid phone number");
             }
+            /*
+            // make format specific error
+            else if (data.getPhone().length() != 11) {
+                throw new Exception("Invalid phone number");
+            }
+            // make error specific to ints
+
+             */
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -26,18 +34,5 @@ public class PhoneNumberValidator implements Validator {
             // no next validator so return everything else.
         }
 
-
-        // add a check that tries to add 1 to a digit
-        // and detects whether it is or isnt a number
-
-
     }
 }
-/*
-    if (phoneNumber.contains()) {
-        return false;
-    }
-
-    return true;
-}
-*/

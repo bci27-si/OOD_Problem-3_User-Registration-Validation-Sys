@@ -17,13 +17,22 @@ public class EmailValidator implements Validator {
     @Override
     public void validate(UserRegistration data) {
 
+        //probably should add logic for a minimum 1 letter  between @ and . before and after as well.
         try{
-            if (!data.getEmail().contains("@")) {
-                //probably should add logic for a minimum 1 letter  between @ and . before and after as well.
+            if(!(data.getEmail().length() >= 5)){
+
+                throw new Exception("Email too short");
+            }
+            else if (!data.getEmail().contains("@")) {
+                throw new Exception("Address has no ' @ ' symbol ");
+
                 if (!data.getEmail().contains(".")) {
                     // exception probably
+                    throw new Exception("Address has no '.' after '@' ");
                 }
             }
+            // add format exception
+
             else{
                 // throw an exception ? to avoid this being improperly validated ?
                 nextValidator = null;

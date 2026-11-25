@@ -4,6 +4,7 @@ import java.awt.*;
 // don't need to extend JFrame because two windows open... wonder how that works. anyway...
 public class ValidatorUi {
     Validator validator;
+    JButton b;
     /*
     Set Up the Java Swing UI:
 Create a Java Swing form (JFrame) with fields for Username, Password, Email, and an optional Phone Number.
@@ -16,32 +17,24 @@ Display validation error messages near each input field if validation fails.
         // created the window here
 
         JFrame frame = new JFrame();
-
         frame.setSize(600,550);
 
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.setVisible(true);
         // new grid layout for more exact layout; 9 rows, 1 column
 
-        //***** not sure why, but everything except button location works when \/ is 0,1
         JPanel panel = new JPanel(new GridLayout(9,1));
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-        //panel.setVisible(true);
 
         JLabel l = new JLabel("Username");
         JLabel l2 = new JLabel("Password");
         JLabel l3 = new JLabel("Email");
         JLabel l4 = new JLabel("Phone Number");
 
-
         //field for UserName
         JTextField user = new JTextField();
         panel.add(l);
         panel.add(user);
-
 
         // take user input after button is pressed and run through COR validators
         //user. construcor ONLY RUNS ONCE get methods placed into button try loop*****
@@ -50,13 +43,11 @@ Display validation error messages near each input field if validation fails.
         JTextField pass = new JTextField();
         panel.add(l2);
         panel.add(pass);
-        //pass.setText("Password goes here");
 
         //field for Email
         JTextField email = new JTextField();
         panel.add(l3);
         panel.add(email);
-        //email.setText("Email goes here");
 
         //field for phone
         JTextField phone = new JTextField();
@@ -68,8 +59,8 @@ Display validation error messages near each input field if validation fails.
         /*
         JButton b = new JButton("Register");
          */
-        JButton b;
 
+        // ui components are added in order of display
         //  register button
         b = new JButton("Register");
         panel.add(b);// make sure my button is at the bottom so it doesn't mess u he fields
@@ -77,7 +68,6 @@ Display validation error messages near each input field if validation fails.
         // button up top
         b.addActionListener(e -> {
             // ADD WHAT THE BUTTON ACTUALLY DOES HERE
-            //System.out.println("button pressed");
             //call and run the validators through / in the main
 
             try{
@@ -86,19 +76,9 @@ Display validation error messages near each input field if validation fails.
                     user.getText(),pass.getText(),email.getText(),phone.getText()
 
                 );
-                /*
-                // for testing purposes...
-                System.out.println(user.getText());
-                System.out.println(pass.getText());
-                System.out.println(email.getText());
-                System.out.println(phone.getText());
-                 */
 
                 // create new object, pass in data from text fields, then run the validator chain...
                 validator.validate(input);
-
-                //System.out.println("user registration attempted");
-
             }
             catch (Exception z){
                 // show a popup error / display the try catch error
