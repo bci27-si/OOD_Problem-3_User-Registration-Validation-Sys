@@ -10,14 +10,15 @@ public class UsernameValidator implements Validator {
 
     @Override
     public void validate(UserRegistration data) {
-        if (data.getUsername() == null || data.getUsername().equals("")) {
-            System.out.println("Username is empty");
+        System.out.println("developer check" + data.getUsername());
+        if (data.getUsername() == null || data.getUsername().isEmpty()) {
+            //System.out.println("Username is empty");
             nextValidator = null;
 
         }
-
+// the sout statements don't print...
         if (data.getUsername().length() < 5) {
-            System.out.println("Username too short");
+            //System.out.println("Username too short");
             nextValidator = null;
 
         }
