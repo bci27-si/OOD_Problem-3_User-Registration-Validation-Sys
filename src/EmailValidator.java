@@ -3,9 +3,7 @@ public class EmailValidator implements Validator {
     private Validator nextValidator;
 
     // My design theory: validate the data and return a boolean. data as a paramater, return tru or false.
-
-//Email Validation: The email should follow a standard format (e.g., username@domain.com).
-
+    //Email Validation: The email should follow a standard format (e.g., username@domain.com).
     // first check for @, if its there, check for .com. this allows me to ensure the order is right.
     // my better idea
 
@@ -26,11 +24,13 @@ public class EmailValidator implements Validator {
             else if (!data.getEmail().contains("@")) {
                 throw new Exception("Address has no ' @ ' symbol ");
 
-                if (!data.getEmail().contains(".")) {
-                    // exception probably
-                    throw new Exception("Address has no '.' after '@' ");
-                }
             }
+            //FIXME need t update logic so someone can't just type in '.com@'
+            if (!data.getEmail().contains(".")) {
+                // exception probably
+                throw new Exception("Address has no '.' after '@' ");
+            }
+
             // add format exception
 
             else{
@@ -41,13 +41,12 @@ public class EmailValidator implements Validator {
 
         } catch (Exception e) {
             throw new RuntimeException(e);
+
         } finally{
             if (nextValidator != null){
                 nextValidator.validate(data);
             }
 
         }
-
-
     }
 }
