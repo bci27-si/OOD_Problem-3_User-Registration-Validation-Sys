@@ -77,7 +77,7 @@ Display validation error messages near each input field if validation fails.
         // button up top
         b.addActionListener(e -> {
             // ADD WHAT THE BUTTON ACTUALLY DOES HERE
-            System.out.println("button pressed");
+            //System.out.println("button pressed");
             //call and run the validators through / in the main
 
             try{
@@ -85,12 +85,19 @@ Display validation error messages near each input field if validation fails.
                 UserRegistration input = new UserRegistration(
                     user.getText(),pass.getText(),email.getText(),phone.getText()
 
-
                 );
+                /*
+                // for testing purposes...
+                System.out.println(user.getText());
+                System.out.println(pass.getText());
+                System.out.println(email.getText());
+                System.out.println(phone.getText());
+                 */
+
                 // create new object, pass in data from text fields, then run the validator chain...
                 validator.validate(input);
 
-                System.out.println("user registration attempted");
+                //System.out.println("user registration attempted");
 
             }
             catch (Exception z){
