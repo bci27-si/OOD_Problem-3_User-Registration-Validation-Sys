@@ -27,12 +27,12 @@ public class EmailValidator implements Validator {
             else{
                 // throw an exception ? to avoid this being improperly validated ?
                 nextValidator = null;
-                throw new Exception("Email format not correct" + data.getEmail());
+                throw new Exception("Email format not correct");
             }
 
-        }
-
-        finally{
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally{
             if (nextValidator != null){
                 nextValidator.validate(data);
             }

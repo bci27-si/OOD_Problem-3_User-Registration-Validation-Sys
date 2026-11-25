@@ -69,11 +69,12 @@ public class PasswordValidator implements Validator {
                 else{
                     // throw an exception instead
                     //nextValidator = null;
-                    throw new Exception("Password does not meet requirements " + )
+                    throw new Exception("Password does not meet requirements " );
                 }
             }
-        }
-        finally{
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally{
             if (nextValidator != null) {
                 nextValidator.validate(data);
             }

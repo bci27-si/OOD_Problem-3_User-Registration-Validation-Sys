@@ -14,9 +14,18 @@ public class PhoneNumberValidator implements Validator {
 
     @Override
     public void validate(UserRegistration data) {
-        if (data.getPhone().length() != 10) {
-            System.out.println("Invalid phone number");
+
+        try{
+            if (data.getPhone().length() != 10) {
+                throw new Exception("Invalid phone number");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+        finally {
+            // no next validator so return everything else.
+        }
+
 
         // add a check that tries to add 1 to a digit
         // and detects whether it is or isnt a number
