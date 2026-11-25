@@ -37,7 +37,7 @@ Display validation error messages near each input field if validation fails.
         panel.add(user);
 
         // take user input after button is pressed and run through COR validators
-        //user. construcor ONLY RUNS ONCE get methods placed into button try loop*****
+        //user. Constructor ONLY RUNS ONCE get methods placed into button try loop*****
 
         //field FOr password
         JTextField pass = new JTextField();
@@ -80,10 +80,10 @@ Display validation error messages near each input field if validation fails.
                 // create new object, pass in data from text fields, then run the validator chain...
                 validator.validate(input);
             }
+
             catch (Exception z){
                 // show a popup error / display the try catch error
                 System.out.println("Error caught " + z.getMessage());
-
             }
         });
 
@@ -91,11 +91,5 @@ Display validation error messages near each input field if validation fails.
         frame.setVisible(true);
         // the ui does not seem affected whether or not this is at the top or bottom... pack seems to collide with gridlayout.
     }
-
-/*
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(ValidatorUi::new);
-    }
-*/
 
 }
