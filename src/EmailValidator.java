@@ -17,9 +17,14 @@ public class EmailValidator implements Validator {
 
         String email = data.getEmail();
 
+        //at symbol
+        int at = email.indexOf("@");
+        int dot =  email.indexOf(".");
+        // uses the index of the charachter to determine if its in the right place
+
         //probably should add logic for a minimum 1 letter  between @ and . before and after as well.
 
-            if(email.length() >= 5){
+            if(email.length() <= 4){
                 throw new Exception("Email too short");
             }
 
@@ -28,7 +33,6 @@ public class EmailValidator implements Validator {
 
             }
 
-            //FIXME need t update logic so someone can't just type in '.com@'
             if (!email.contains(".")) {
                 // exception probably
                 throw new Exception("Address has no '.' after '@' ");
@@ -36,14 +40,10 @@ public class EmailValidator implements Validator {
 
             // add format exception
 
-            //at symbol
-            int at = email.indexOf("@");
-            int dot =  email.indexOf(".");
-            // uses the index of the charachter to determine if its in the right place
         // || = or seems to be the only way to write or in java
             if(at < 1 || at > dot || dot == email.length()){
                 // throw an exception ? to avoid this being improperly validated ?
-                throw new Exception("Email format not correct");
+                throw new Exception("Email format Incorrect");
             }
             System.out.println("Email Works");
 
