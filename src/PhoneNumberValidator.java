@@ -13,23 +13,21 @@ public class PhoneNumberValidator implements Validator {
     }
 
     @Override
-    public void validate(UserRegistration data) {
+    public void validate(UserRegistration data) throws Exception {
 
-        try{
-            if (data.getPhone().length() != 10) {
-                throw new Exception("Invalid phone number");
-            }
-            /*
-            // make format specific error
-            else if (data.getPhone().length() != 11) {
-                throw new Exception("Invalid phone number");
-            }
-            // make error specific to ints
+        String phone = data.getPhone();
 
-             */
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (phone.length() != 10) {
+            throw new Exception("Phone Must be 10 Digits");
         }
+            // make format specific error
+        // check for numbers only
+        for (int i = 0; i < phone.length(); i++) {
+            if (!Character.isDigit(phone.charAt(i))) {
+                throw new Exception("Numbers only here");
+            }
+        }
+            // make error specific to ints
 
     }
 }

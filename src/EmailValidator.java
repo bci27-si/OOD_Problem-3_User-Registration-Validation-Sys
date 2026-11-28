@@ -35,16 +35,19 @@ public class EmailValidator implements Validator {
             }
 
             // add format exception
-/*
-            //at symbol
-            //String at = email.indexOf("@");
-            //String dot =  email.indexOf(".");
 
-            if( ){
+            //at symbol
+            int at = email.indexOf("@");
+            int dot =  email.indexOf(".");
+            // uses the index of the charachter to determine if its in the right place
+        // || = or seems to be the only way to write or in java
+            if(at < 1 || at > dot || dot == email.length()){
                 // throw an exception ? to avoid this being improperly validated ?
-                nextValidator = null;
                 throw new Exception("Email format not correct");
-            }*/
+            }
+            System.out.println("Email Works");
+
+            // instaed of setting the validator to null, i throw an exception and break before its assessed
             if (nextValidator != null) {
                 nextValidator.validate(data);
             }

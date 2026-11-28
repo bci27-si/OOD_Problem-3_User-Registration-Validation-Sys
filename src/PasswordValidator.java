@@ -60,17 +60,21 @@ public class PasswordValidator implements Validator {
                     //hasDigit = true;
                 hasDigit = true;
 
-            }
-// (hasUppercase && hasDigit && hasLower) = true simplified to \/
-            if ((hasUppercase && hasDigit && hasLower)) {
-                System.out.println("Password looks good1");
-                break;
-            }
-
-                //throw new Exception("Password does not meet requirements " );
+            }                //throw new Exception("Password does not meet requirements " );
 
 
         }
+
+// (hasUppercase && hasDigit && hasLower) = true simplified to \/
+        if (!(hasUppercase && hasDigit && hasLower)) {
+            throw new Exception("Password is unacceptable");
+
+            //System.out.println("Password looks good1");
+            // attempting to fix the logic by checking for all bools after the entire string is read.
+            // I didn't want this since it makes the program slower by some ultra tiny amount
+            //break;
+        }
+
 
         if (nextValidator != null) {
             nextValidator.validate(data);
