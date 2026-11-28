@@ -3,12 +3,8 @@ import javax.swing.SwingUtilities;
 public class UserRegisterAPP {
 
     /**
-     * Fixed ui problem by goint to JDK Default instaed of letting it stay set to 26...
-     * @param args
+     * main class connects all validators together and instantiates the ui so it starts
      */
-    // check to find the null error;
-    //UserRegistration u;
-
 
     static void main(String[] args) {
 

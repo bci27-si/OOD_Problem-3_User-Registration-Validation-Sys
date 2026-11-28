@@ -13,40 +13,43 @@ public class EmailValidator implements Validator {
     }
 
     @Override
-    public void validate(UserRegistration data) {
+    public void validate(UserRegistration data) throws Exception {
+
+        String email = data.getEmail();
 
         //probably should add logic for a minimum 1 letter  between @ and . before and after as well.
-        try{
-            if(!(data.getEmail().length() >= 5)){
 
+            if(email.length() >= 5){
                 throw new Exception("Email too short");
             }
-            else if (!data.getEmail().contains("@")) {
+
+            if (!email.contains("@")) {
                 throw new Exception("Address has no ' @ ' symbol ");
 
             }
+
             //FIXME need t update logic so someone can't just type in '.com@'
-            if (!data.getEmail().contains(".")) {
+            if (!email.contains(".")) {
                 // exception probably
                 throw new Exception("Address has no '.' after '@' ");
             }
 
             // add format exception
+/*
+            //at symbol
+            //String at = email.indexOf("@");
+            //String dot =  email.indexOf(".");
 
-            else{
+            if( ){
                 // throw an exception ? to avoid this being improperly validated ?
                 nextValidator = null;
                 throw new Exception("Email format not correct");
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-
-        } finally{
-            if (nextValidator != null){
+            }*/
+            if (nextValidator != null) {
                 nextValidator.validate(data);
             }
-
         }
+
+
     }
 }

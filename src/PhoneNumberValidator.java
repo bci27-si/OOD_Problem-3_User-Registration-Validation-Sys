@@ -30,9 +30,6 @@ public class PhoneNumberValidator implements Validator {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        finally {
-            // no next validator so return everything else.
-        }
 
     }
 }

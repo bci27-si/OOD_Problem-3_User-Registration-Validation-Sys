@@ -71,7 +71,7 @@ Display validation error messages near each input field if validation fails.
             //call and run the validators through / in the main
 
             try{
-                //input
+                //input. use user opbject here after all have been gathered and try all at once.
                 UserRegistration input = new UserRegistration(
                     user.getText(),pass.getText(),email.getText(),phone.getText()
 
@@ -79,10 +79,13 @@ Display validation error messages near each input field if validation fails.
 
                 // create new object, pass in data from text fields, then run the validator chain...
                 validator.validate(input);
+
+                JOptionPane.showMessageDialog(frame,"Valid info");
             }
 
             catch (Exception z){
-                // show a popup error / display the try catch error
+                JOptionPane.showMessageDialog(frame,z.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                // ^^show a popup error / display the try catch error^^
                 System.out.println("Error caught " + z.getMessage());
             }
         });

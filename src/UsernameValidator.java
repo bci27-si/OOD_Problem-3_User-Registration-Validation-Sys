@@ -12,7 +12,7 @@ public class UsernameValidator implements Validator {
     public void validate(UserRegistration data) {
 
         try {
-
+            // is empty check for every kind of charachter, even blanks.
             if (data.getUsername() == null || data.getUsername().isEmpty()) {
                 //System.out.println("Username is empty");
                 throw new Exception("Username is empty");// throw the default exception...
