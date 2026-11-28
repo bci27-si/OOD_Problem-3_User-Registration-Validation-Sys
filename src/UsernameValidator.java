@@ -9,34 +9,24 @@ public class UsernameValidator implements Validator {
     }
 
     @Override
-    public void validate(UserRegistration data) {
+    public void validate(UserRegistration data) throws Exception {
 
-        try {
             // is empty check for every kind of charachter, even blanks.
-            if (data.getUsername() == null || data.getUsername().isEmpty()) {
+        if (data.getUsername() == null || data.getUsername().isEmpty()) {
                 //System.out.println("Username is empty");
-                throw new Exception("Username is empty");// throw the default exception...
+            throw new Exception("Username is empty");// throw the default exception...
 
-            }//()
+        }//()
 // the sout statements don't print...
-            else if (data.getUsername().length() < 5) {
+        if (data.getUsername().length() < 5) {
                 //System.out.println("Username too short");
-                throw new Exception("Username too short");
-            }
-    }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-            //System.out.println("Invalid username");
+            throw new Exception("Username too short");
 
         }
+            //System.out.println("Validating username: " + nextValidator.toString());
 
-        finally{
-            System.out.println("Validating username: " + nextValidator.toString());
-
-            if (nextValidator != null) {
-                nextValidator.validate(data);
-            }
-
+        if (nextValidator != null) {
+            nextValidator.validate(data);
         }
     }
 }
