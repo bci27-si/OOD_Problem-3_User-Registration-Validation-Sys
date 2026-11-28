@@ -36,8 +36,7 @@ public class PasswordValidator implements Validator {
         else if (pass.length() < 8) {
             throw new Exception("Password too short");
             //System.out.println("Password is too short");
-                //FIXME needs to error out here
-                //return false;
+
         }
 
         for (int i = 0; i < pass.length(); i++) {
@@ -62,9 +61,29 @@ public class PasswordValidator implements Validator {
 
             }                //throw new Exception("Password does not meet requirements " );
 
-
         }
 
+        // this allows for a more accurate explanation of why something broke
+
+        if (!hasUppercase) {
+            throw new Exception("Password contains No uppercase characters");
+
+        }
+        if (!hasLower) {
+            throw new Exception("Password contains No lower case characters");
+        }
+        if (!hasDigit) {
+            throw new Exception("Password contains No digit characters");
+        }
+
+        if (nextValidator != null) {
+            nextValidator.validate(data);
+        }
+
+    }
+}
+
+/*
 // (hasUppercase && hasDigit && hasLower) = true simplified to \/
         if (!(hasUppercase && hasDigit && hasLower)) {
             throw new Exception("Password is unacceptable");
@@ -74,11 +93,4 @@ public class PasswordValidator implements Validator {
             // I didn't want this since it makes the program slower by some ultra tiny amount
             //break;
         }
-
-
-        if (nextValidator != null) {
-            nextValidator.validate(data);
-        }
-
-    }
-}
+*/
